@@ -28,6 +28,12 @@
     box-sizing: border-box;
 }
 
+.empresa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 header {
     height: 30px;
     width: 100%;
@@ -56,8 +62,9 @@ section {
     min-height: 200px;
 }
 
-img {
-    height: 100px;
+.empresa img {
+    height: 70px;
+    margin-right: 5px;
 }
 
 input {
