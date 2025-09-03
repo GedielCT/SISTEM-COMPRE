@@ -26,7 +26,7 @@
                 </ul>
                 <div class="botoes">
                     <a href="confirmarAlteracao.html" class="confirmar">CONFIRMAR</a>
-                    <a href="../../home.html" class="cancelar">CANCELAR</a>
+                    <button id="cancelar" class="cancelar">CANCELAR</button>
                 </div>
             </div>
             <div class="direita">
@@ -35,4 +35,15 @@
         </section>
     </div>
 </body>
+<script>
+    document.getElementById('cancelar').onclick = function() {
+        const params = new URLSearchParams(window.location.search);
+        const from = params.get('from');
+        if (from) {
+            window.location.href = from;
+        } else {
+            window.location.href = "../../../index.html"; // fallback
+        }
+    };
+</script>
 </html>
