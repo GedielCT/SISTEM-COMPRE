@@ -38,6 +38,7 @@
     display: flex;
     justify-content: space-between;
     width: 80%;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .entrar {
@@ -45,7 +46,7 @@
     color: black;
     height: 32px;
     width: 84px;
-    padding: 5px;
+    padding: 7px;
     text-align: center;
     text-decoration: none;
     border: 1px solid black;
@@ -55,8 +56,8 @@
 }
 
 .empresa img {
-    height: 70px;
-    margin-right: 5px;
+    height: 90px;
+    margin-bottom: 10px;
 }
 
 header {
@@ -104,5 +105,6 @@ body {
 
 ul {
     list-style-type: square;
-    padding-top: 30px;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
 }

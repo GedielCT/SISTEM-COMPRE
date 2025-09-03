@@ -16,6 +16,7 @@
     width: 100%;
     align-items: center;
     flex-direction: column;
+    justify-content: center;
     display: flex;
     box-sizing: border-box;
 }
@@ -65,25 +66,16 @@
     box-sizing: border-box;
 }
 
-.direita h2 {
-    margin-top: 5px;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    color: black;
-}
-
 input {
     height: 36px;
     width: 436px;
-    margin-top: 13px;
+    margin-bottom: 13px;
     text-align: center;
     border: 1px solid black;
 }
 
 ul {
     list-style-type: square;
-    margin-top: 13px;
     margin-left: auto;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
@@ -121,8 +113,8 @@ section {
 }
 
 img {
-    height: 70px;
-    width: 70px;
+    height: 80px;
+    width: 80px;
 }
 
 body {
