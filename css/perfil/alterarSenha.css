@@ -13,9 +13,8 @@
 
 .esquerda {
     justify-self: left;
-    width: 70%;
+    width: 100%;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
     display: flex;
     box-sizing: border-box;
@@ -23,40 +22,72 @@
 
 .direita {
     justify-self: right;
-    width: 30%;
-    display: block;
-    box-sizing: border-box;
-}
-
-.empresa {
+    width: 100px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
 }
 
 .botoes {
+    width: 40%;
+    margin-top: 13px;
     display: flex;
     justify-content: space-between;
-    width: 80%;
-}
-
-.entrar {
-    background-color: #4CAF50;
-    color: black;
-    height: 32px;
-    width: 84px;
-    padding: 5px;
-    text-align: center;
-    text-decoration: none;
-    border: 1px solid black;
-    cursor: pointer;
-    display: inline-block;
     box-sizing: border-box;
 }
 
-.empresa img {
-    height: 70px;
-    margin-right: 5px;
+.confirmar {
+    height: 33px;
+    width: 111px;
+    background-color: #60D781;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    padding: 7px;
+    display: inline-block;
+    border: 1px solid black;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.cancelar {
+    height: 33px;
+    width: 111px;
+    background-color: #E84141;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    padding: 7px;
+    display: inline-block;
+    border: 1px solid black;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.direita h2 {
+    margin-top: 5px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: black;
+}
+
+input {
+    height: 36px;
+    width: 436px;
+    margin-top: 13px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+ul {
+    list-style-type: square;
+    margin-top: 13px;
+    margin-left: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: black;
 }
 
 header {
@@ -72,7 +103,9 @@ header {
 header h1 {
     margin: 0%;
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 26px;
+    color: black;
 }
 
 section {
@@ -87,12 +120,9 @@ section {
     min-height: 200px;
 }
 
-input {
-    height: 44px;
-    width: 80%;
-    margin: 5px;
-    text-align: center;
-    border: 1px solid black;
+img {
+    height: 70px;
+    width: 70px;
 }
 
 body {
@@ -100,9 +130,4 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-ul {
-    list-style-type: square;
-    padding-top: 30px;
 }
