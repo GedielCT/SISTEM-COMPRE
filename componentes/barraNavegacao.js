@@ -12,41 +12,41 @@ class BarraNavegacao extends HTMLElement {
                 <div class="esquerda">
                     <button class="buttonCadastrar" id="buttonCadastrar">Cadastrar</button>
                     <div class="dropdownCadastrar" id="dropdownCadastrar">
-                        <a href="/pages/cadastrar/cliente.html" class="botoes">Cliente</a>
-                        <a href="/pages/cadastrar/funcionario.html" class="botoes">Funcionário</a>
-                        <a href="/pages/cadastrar/produto.html" class="botoes">Produto</a>
+                        <a href="../../pages/cadastrar/cliente.html" class="botoes">Cliente</a>
+                        <a href="../../pages/cadastrar/funcionario.html" class="botoes">Funcionário</a>
+                        <a href="../../pages/cadastrar/produto.html" class="botoes">Produto</a>
                     </div>                    
 
                     <button class="buttonFinanceiro" id="buttonFinanceiro">Financeiro</button>
                     <div class="dropdownFinanceiro" id="dropdownFinanceiro">
-                        <a href="/pages/financeiro/venda.html" class="botoes">Venda</a>
+                        <a href="../../pages/financeiro/venda.html" class="botoes">Venda</a>
                     </div>
 
                     <button class="buttonConsultas" id="buttonConsultas">Consultas</button>
                     <div class="dropdownConsultas" id="dropdownConsultas">
-                        <a href="/pages/consultas/cliente.html" class="botoes">Cliente</a>
-                        <a href="/pages/consultas/funcionario.html" class="botoes">Funcionário</a>
-                        <a href="/pages/consultas/produto.html" class="botoes">Produto</a>
+                        <a href="../../pages/consultas/cliente.html" class="botoes">Cliente</a>
+                        <a href="../../pages/consultas/funcionario.html" class="botoes">Funcionário</a>
+                        <a href="../../pages/consultas/produto.html" class="botoes">Produto</a>
                     </div>
 
                     <button class="buttonRelatorios" id="buttonRelatorios">Relatórios</button>
                     <div class="dropdownRelatorios" id="dropdownRelatorios">
-                        <a href="/pages/relatorios/vendas.html" class="botoes">Vendas</a>
-                        <a href="/pages/relatorios/comissao.html" class="botoes">Comissão</a>
+                        <a href="../../pages/relatorios/vendas.html" class="botoes">Vendas</a>
+                        <a href="../../pages/relatorios/comissao.html" class="botoes">Comissão</a>
                     </div> 
 
                     <button class="buttonAjuda" id="buttonAjuda">Ajuda</button>
                     <div class="dropdownAjuda" id="dropdownAjuda">
-                        <a href="/pages/ajuda/suporte.html" class="botoes">Suporte</a>
-                        <a href="/pages/ajuda/manual.html" class="botoes">Manual</a>
+                        <a href="../../pages/ajuda/suporte.html" class="botoes">Suporte</a>
+                        <a href="../../pages/ajuda/manual.html" class="botoes">Manual</a>
                     </div>                    
                 </div>
                 <div class="direita">
                     <p>Conectado como: Vendedor Thiago</p>
                     <button class="buttonPerfil" id="buttonPerfil"><img src="../../img/usuario.png"></button>
                     <div class="dropdownPerfil" id="dropdownPerfil">
-                        <a href="/pages/perfil/alterarSenha.html?from=../../home.html" class="botoes">Alterar Senha</a>
-                        <a href="/index.html" class="botoes">Sair</a>
+                        <a href="../../pages/perfil/alterarSenha.html?from=../../home.html" class="botoes">Alterar Senha</a>
+                        <a href="../../index.html" class="botoes">Sair</a>
                     </div>
                 </div>
             </nav>
