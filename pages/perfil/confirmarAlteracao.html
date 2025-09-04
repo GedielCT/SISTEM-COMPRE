@@ -28,6 +28,14 @@
     </div>
 </body>
 <script>
+// Corrige o link do cancelar para manter o parâmetro from ao voltar para alterarSenha.html
+const params = new URLSearchParams(window.location.search);
+const from = params.get('from');
+const cancelarLink = document.querySelector('a.cancelar');
+if (cancelarLink && from) {
+    cancelarLink.href = `alterarSenha.html?from=${encodeURIComponent(from)}`;
+}
+
 document.getElementById('confirmar').onclick = function() {
     alert('Senha alterada com sucesso!');
     const params = new URLSearchParams(window.location.search);
