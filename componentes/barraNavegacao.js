@@ -4,49 +4,65 @@ class BarraNavegacao extends HTMLElement {
         this.attachShadow({ mode: "open" });
     }
 
-    connectedCallback() {
-        this.shadowRoot.innerHTML = `
-            <link rel="stylesheet" href="../../css/barraNavegacao.css">    
 
+    connectedCallback() {
+        // Detecta o caminho base do site
+        let base = window.location.pathname;
+        // Remove o nome do arquivo se houver (ex: /home.html -> /)
+        if (base.match(/\.[a-zA-Z0-9]+$/)) {
+            base = base.substring(0, base.lastIndexOf("/")) + "/";
+        }
+        // Se estiver em subdiretório (GitHub Pages), pega o primeiro segmento
+        const pathParts = base.split("/").filter(Boolean);
+        let root = "/";
+        if (pathParts.length > 0) {
+            root = "/" + pathParts[0] + "/";
+        }
+        // Se estiver rodando localmente (Live Server), root é "/"
+        if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
+            root = "/";
+        }
+
+        // Função para montar links
+        const link = (p) => root + p;
+
+        this.shadowRoot.innerHTML = `
+            <link rel="stylesheet" href="${link('css/barraNavegacao.css')}">
             <nav>
                 <div class="esquerda">
                     <button class="buttonCadastrar" id="buttonCadastrar">Cadastrar</button>
                     <div class="dropdownCadastrar" id="dropdownCadastrar">
-                        <a href="../../pages/cadastrar/cliente.html" class="botoes">Cliente</a>
-                        <a href="../../pages/cadastrar/funcionario.html" class="botoes">Funcionário</a>
-                        <a href="../../pages/cadastrar/produto.html" class="botoes">Produto</a>
-                    </div>                    
-
+                        <a href="${link('pages/cadastrar/cliente.html')}" class="botoes">Cliente</a>
+                        <a href="${link('pages/cadastrar/funcionario.html')}" class="botoes">Funcionário</a>
+                        <a href="${link('pages/cadastrar/produto.html')}" class="botoes">Produto</a>
+                    </div>
                     <button class="buttonFinanceiro" id="buttonFinanceiro">Financeiro</button>
                     <div class="dropdownFinanceiro" id="dropdownFinanceiro">
-                        <a href="../../pages/financeiro/venda.html" class="botoes">Venda</a>
+                        <a href="${link('pages/financeiro/venda.html')}" class="botoes">Venda</a>
                     </div>
-
                     <button class="buttonConsultas" id="buttonConsultas">Consultas</button>
                     <div class="dropdownConsultas" id="dropdownConsultas">
-                        <a href="../../pages/consultas/cliente.html" class="botoes">Cliente</a>
-                        <a href="../../pages/consultas/funcionario.html" class="botoes">Funcionário</a>
-                        <a href="../../pages/consultas/produto.html" class="botoes">Produto</a>
+                        <a href="${link('pages/consultas/cliente.html')}" class="botoes">Cliente</a>
+                        <a href="${link('pages/consultas/funcionario.html')}" class="botoes">Funcionário</a>
+                        <a href="${link('pages/consultas/produto.html')}" class="botoes">Produto</a>
                     </div>
-
                     <button class="buttonRelatorios" id="buttonRelatorios">Relatórios</button>
                     <div class="dropdownRelatorios" id="dropdownRelatorios">
-                        <a href="../../pages/relatorios/vendas.html" class="botoes">Vendas</a>
-                        <a href="../../pages/relatorios/comissao.html" class="botoes">Comissão</a>
-                    </div> 
-
+                        <a href="${link('pages/relatorios/vendas.html')}" class="botoes">Vendas</a>
+                        <a href="${link('pages/relatorios/comissao.html')}" class="botoes">Comissão</a>
+                    </div>
                     <button class="buttonAjuda" id="buttonAjuda">Ajuda</button>
                     <div class="dropdownAjuda" id="dropdownAjuda">
-                        <a href="../../pages/ajuda/suporte.html" class="botoes">Suporte</a>
-                        <a href="../../pages/ajuda/manual.html" class="botoes">Manual</a>
-                    </div>                    
+                        <a href="${link('pages/ajuda/suporte.html')}" class="botoes">Suporte</a>
+                        <a href="${link('pages/ajuda/manual.html')}" class="botoes">Manual</a>
+                    </div>
                 </div>
                 <div class="direita">
                     <p>Conectado como: Vendedor Thiago</p>
-                    <button class="buttonPerfil" id="buttonPerfil"><img src="../../img/usuario.png"></button>
+                    <button class="buttonPerfil" id="buttonPerfil"><img src="${link('img/usuario.png')}"></button>
                     <div class="dropdownPerfil" id="dropdownPerfil">
-                        <a href="../../pages/perfil/alterarSenha.html?from=../../home.html" class="botoes">Alterar Senha</a>
-                        <a href="../../index.html" class="botoes">Sair</a>
+                        <a href="${link('pages/perfil/alterarSenha.html?from=home.html')}" class="botoes">Alterar Senha</a>
+                        <a href="${link('index.html')}" class="botoes">Sair</a>
                     </div>
                 </div>
             </nav>
