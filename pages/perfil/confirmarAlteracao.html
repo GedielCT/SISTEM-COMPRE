@@ -17,7 +17,7 @@
             <div class="esquerda">
                 <input type="text" placeholder="INSIRA O CÓDIGO RECEBIDO">
                 <div class="botoes">
-                    <a href="../../home.html" class="confirmar">CONFIRMAR</a>
+                    <button id="confirmar" class="confirmar">CONFIRMAR</button>
                     <a href="alterarSenha.html" class="cancelar">CANCELAR</a>
                 </div>
             </div>
@@ -28,9 +28,15 @@
     </div>
 </body>
 <script>
-    const confirmar = document.querySelector('.confirmar');
-    confirmar.addEventListener('click', function(event) {
-        alert('Senha alterada com sucesso!');
-    });
+document.getElementById('confirmar').onclick = function() {
+    alert('Senha alterada com sucesso!');
+    const params = new URLSearchParams(window.location.search);
+    const from = params.get('from');
+    if (from) {
+        window.location.href = from;
+    } else {
+        window.location.href = '../../index.html';
+    }
+};
 </script>
 </html>

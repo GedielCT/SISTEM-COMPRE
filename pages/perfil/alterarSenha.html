@@ -36,14 +36,24 @@
     </div>
 </body>
 <script>
+    // Cancelar
     document.getElementById('cancelar').onclick = function() {
         const params = new URLSearchParams(window.location.search);
         const from = params.get('from');
         if (from) {
             window.location.href = from;
         } else {
-            window.location.href = "../../../index.html"; // fallback
+            window.location.href = '../../index.html';
         }
     };
+    // Corrige o link do confirmar para manter o parâmetro from
+    const params = new URLSearchParams(window.location.search);
+    const from = params.get('from');
+    if (from) {
+        const confirmarLink = document.querySelector('a.confirmar');
+        if (confirmarLink) {
+            confirmarLink.href = `confirmarAlteracao.html?from=${encodeURIComponent(from)}`;
+        }
+    }
 </script>
 </html>

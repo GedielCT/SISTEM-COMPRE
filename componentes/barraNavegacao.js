@@ -45,7 +45,7 @@ class BarraNavegacao extends HTMLElement {
                     <p>Conectado como: Vendedor Thiago</p>
                     <button class="buttonPerfil" id="buttonPerfil"><img src="img/usuario.png"></button>
                     <div class="dropdownPerfil" id="dropdownPerfil">
-                        <a href="pages/perfil/alterarSenha.html?from=home.html" class="botoes">Alterar Senha</a>
+                        <a href="pages/perfil/alterarSenha.html?from=../../home.html" class="botoes">Alterar Senha</a>
                         <a href="index.html" class="botoes">Sair</a>
                     </div>
                 </div>
