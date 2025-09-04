@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Compre</title>
+    <link rel="stylesheet" href="../../css/reset-min.css">
+    <link rel="stylesheet" href="../../css/padrao.css">
+    <link rel="stylesheet" href="../../css/relatorios/vendas.css">
+</head>
+<body>
+    <barra-navegacao></barra-navegacao>
+    <div class="centralizar">
+        <div class="tela">
+            <header>
+                <h1>$ Relatório de Vendas</h1>
+                <a href="../../home.html" class="voltar">X</a>
+            </header>
+            <section>
+                <div class="filtros">
+                    <label for="buscar">Buscar:</label>
+                    <input type="text" id="buscar" name="buscar">
+
+                    <label for="filtrar-por">Filtrar por:</label>
+                    <select id="filtrar-por" name="filtrar-por">
+                        <option value="nome">Nome</option>
+                        <option value="codigo">Código</option>
+                        <option value="cpf">CPF</option>
+                    </select>
+
+                    <label for="data-inicio">Data Início:</label>
+                    <input type="date" id="data-inicio" name="data-inicio">
+
+                    <label for="data-fim">Data Fim:</label>
+                    <input type="date" id="data-fim" name="data-fim">
+
+                    <label for="ordemar-por">Ordenar por:</label>
+                    <select id="ordenar-por" name="ordenar-por">
+                        <option value="data">Data</option>
+                        <option value="valor">Valor</option>
+                        <option value="cliente">Cliente</option>
+                        <option value="produto">Produto</option>
+                        <option value="quantidade">Quantidade</option>
+                        <option value="mais-vendidos">Mais Vendidos</option>
+                        <option value="menos-vendidos">Menos Vendidos</option>
+                    </select>
+                    <img src="../../img/lupa.png" alt="Lupa">
+                    <button id="consultar">Consultar</button>
+                </div>
+                <div class="relatorio">
+                    <table>
+                        <colgroup>
+                            <col style="width: 300px;">
+                            <col style="width: 80px;">
+                            <col style="width: 300px;">
+                            <col style="width: 40px;">
+                            <col style="width: 40px;">
+                            <col style="width: 150px;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>Produto</th>
+                                <th>Código</th>
+                                <th>Marca</th>
+                                <th>Qntd estoque</th>
+                                <th>Qntd vendido</th>
+                                <th>Lucro total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Produto A</td>
+                                <td>12345678</td>
+                                <td>Marca A</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>R$ 100,00</td>
+                            </tr>
+                            <tr>
+                                <td>Produto B</td>
+                                <td>23456789</td>
+                                <td>Marca B</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>R$ 50,00</td>
+                            </tr>
+                            <tr>
+                                <td>Produto C</td>
+                                <td>34567890</td>
+                                <td>Marca C</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>R$ 150,00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+<script src="../../componentes/barraNavegacao.js"></script>
+</html>
