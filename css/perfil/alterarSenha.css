@@ -1,6 +1,6 @@
 .tela {
-    width: 715px;
-    min-height: 354px;
+    width: 1005px;
+    height: 574px;
     background-color: black;
     display: flex;
     flex-direction: column;
@@ -11,8 +11,17 @@
     padding: 3px;
 }
 
-.esquerda {
-    justify-self: left;
+.topo {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.baixo {
+    height: 80%;
     width: 100%;
     align-items: center;
     flex-direction: column;
@@ -21,32 +30,44 @@
     box-sizing: border-box;
 }
 
-.direita {
-    justify-self: right;
-    width: 100px;
+.inputs {
+    height: 50%;
+    width: 100%;
+    gap: 10px;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
     box-sizing: border-box;
 }
 
-.botoes {
-    width: 40%;
-    margin-top: 13px;
+.info {
+    height: 30%;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.botoes {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     box-sizing: border-box;
 }
 
 .confirmar {
     height: 33px;
     width: 111px;
+    margin: 5px;
     background-color: #60D781;
     color: black;
     text-align: center;
     text-decoration: none;
     padding: 7px;
-    display: inline-block;
     border: 1px solid black;
     cursor: pointer;
     box-sizing: border-box;
@@ -55,12 +76,12 @@
 .cancelar {
     height: 33px;
     width: 111px;
+    margin: 5px;
     background-color: #E84141;
     color: black;
     text-align: center;
     text-decoration: none;
     padding: 7px;
-    display: inline-block;
     border: 1px solid black;
     cursor: pointer;
     box-sizing: border-box;
@@ -69,27 +90,26 @@
 input {
     height: 36px;
     width: 436px;
-    margin-bottom: 13px;
     text-align: center;
     border: 1px solid black;
 }
 
 ul {
     list-style-type: square;
-    margin-left: auto;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     color: black;
 }
 
 header {
-    height: 30px;
+    height: 8%;
     width: 100%;
     margin-bottom: 3px;
-    padding: auto;
     background-color: #65698E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     box-sizing: border-box;
-    max-width: 100%;
 }
 
 header h1 {
@@ -101,20 +121,21 @@ header h1 {
 }
 
 section {
-    height: 324px;
+    height: 92%;
     width: 100%;
     margin: 0px;
     padding: 5px;
     background-color: #D9D9D9;
     display: flex;
+    flex-direction: column;
     box-sizing: border-box;
     max-width: 100%;
     min-height: 200px;
 }
 
 img {
-    height: 80px;
-    width: 80px;
+    height: 100%;
+    width: auto;
 }
 
 body {

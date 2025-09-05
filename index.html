@@ -32,30 +32,34 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <div class="tela">
-        <header>
-            <h1>Login</h1>
-        </header>
-        <section>
-            <div class="esquerda">
-                <input type="text" placeholder="CPF">
-                <input type="password" placeholder="Senha">
-                <div class="botoes">
-                    <a href="pages/perfil/alterarSenha.html?from=../../../../index.html">Esqueceu a senha?</a>
-                    <a href="home.html" class="entrar">Entrar</a>
+    <div class="centralizar">
+        <div class="tela">
+            <header>
+                <h1>Login</h1>
+            </header>
+            <section>
+                <div class="topo">
+                        <img class="logo" src="img/logoIndex.png">
                 </div>
-            </div>
-            <div class="direita">
-                <div class="empresa">
-                    <img src="img/logoIndex.png">
+                <div class="baixo">
+                    <div class="inputs">
+                        <input type="text" placeholder="CPF">
+                        <input type="password" placeholder="Senha">
+                    </div>
+                    <div class="botoes">
+                        <a href="pages/perfil/alterarSenha.html?from=../../../../index.html">Esqueceu a senha?</a>
+                        <a href="home.html" class="entrar">Entrar</a>
+                    </div>
+                    <div class="info">
+                        <ul>
+                            <li>Senha deve ter pelo menos 8 caracteres</li>
+                            <li>Incluir letras maiúsculas e minúsculas</li>
+                            <li>Incluir números e símbolos</li>
+                        </ul>
+                    </div>
                 </div>
-                <ul>
-                    <li>Senha deve ter pelo menos 8 caracteres</li>
-                    <li>Incluir letras maiúsculas e minúsculas</li>
-                    <li>Incluir números e símbolos</li>
-                </ul>
-            </div>
-        </section>
+            </section>
+        </div>
     </div>
 </body>
 </html>
