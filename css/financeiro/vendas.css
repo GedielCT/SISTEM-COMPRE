@@ -52,13 +52,7 @@
     width: 100%;
     padding: 10px;
     background-color: #65698E;
-    color: black;
-    font-weight: bold;
-    border: solid 1px black;
-    cursor: pointer;
-    transition: background-color 0.2s;
     grid-column: span 2;
-    box-sizing: border-box;
 }
 
 .codigo {
@@ -160,10 +154,12 @@ section {
     box-sizing: border-box;
 }
 
-input {
+input,
+select {
     grid-column: span 1;
     grid-row: span 1;
     padding: 5px;
+    border: solid 1px black;
     box-sizing: border-box;
 }
 
@@ -179,6 +175,7 @@ textarea {
     grid-column: span 2;
     grid-row: span 1;
     resize: none;
+    border: solid 1px black;
 }
 
 button {
@@ -186,11 +183,11 @@ button {
     grid-row: span 1;
     padding: 10px;
     color: black;
-    font-weight: bold;
     border: solid 1px black;
+    font-weight: bold;
     cursor: pointer;
     transition: background-color 0.2s;
-
+    box-sizing: border-box;
 }
 
 p {
