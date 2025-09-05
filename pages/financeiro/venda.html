@@ -1,0 +1,83 @@
+        <script>
+        // Corrige links dinamicamente para funcionar em GitHub Pages e Live Server
+        (function() {
+            function getBase() {
+                let base = window.location.pathname;
+                if (base.match(/\.[a-zA-Z0-9]+$/)) base = base.substring(0, base.lastIndexOf("/")) + "/";
+                const pathParts = base.split("/").filter(Boolean);
+                let root = "/";
+                if (pathParts.length > 0) root = "/" + pathParts[0] + "/";
+                if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") root = "/";
+                return root;
+            }
+            const root = getBase();
+            document.querySelectorAll('a[href], link[href], img[src], script[src]').forEach(el => {
+                let attr = el.hasAttribute('href') ? 'href' : 'src';
+                let val = el.getAttribute(attr);
+                if (val && !val.match(/^(https?:|#|mailto:|javascript:)/) && !val.startsWith(root)) {
+                    if (val.startsWith('/')) val = val.substring(1);
+                    el.setAttribute(attr, root + val);
+                }
+            });
+        })();
+        </script>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Compre</title>
+    <link rel="stylesheet" href="../../css/reset-min.css">
+    <link rel="stylesheet" href="../../css/padrao.css">
+    <link rel="stylesheet" href="../../css/financeiro/vendas.css">
+</head>
+<body>
+    <barra-navegacao></barra-navegacao>
+    <div class="centralizar">
+        <div class="tela">
+            <header>
+                <h1>Venda</h1>
+                <a href="../../home.html" class="voltar">X</a>
+            </header>
+            <section>
+                <div class="esquerda">
+                    <p>ADICIONAR PRODUTO:</p>
+                    <input type="text" id="codigo" name="codigo" class="codigo" placeholder="CÓDIGO">
+                    <input type="text" id="produto" name="produto" class="produto" placeholder="PRODUTO">
+
+                    <div class="lista-codigos">
+                        <label for="codigo">001</label>
+                        <label for="codigo">002</label>
+                        <label for="codigo">003</label>
+                        <label for="codigo">004</label>
+                        <label for="codigo">005</label>
+                    </div>
+                    <div class="lista-produtos">
+                        <label for="produto">Produto 1</label>
+                        <label for="produto">Produto 2</label>
+                        <label for="produto">Produto 3</label>
+                        <label for="produto">Produto 4</label>
+                        <label for="produto">Produto 5</label>
+                    </div>
+
+                    <button id="finalizar" class="finalizar">FINALIZAR VENDA</button>
+                </div>
+                <div class="direita">
+                    <input type="text" id="valor-unitario" name="valor-unitario" placeholder="VALOR UNITÁRIO">
+                    <input type="text" id="quantidade" name="quantidade" placeholder="QUANTIDADE">
+                    <input type="text" id="comissao" name="comissao" placeholder="COMISSÃO">
+                    <input type="text" id="desconto" name="desconto" placeholder="DESCONTO">
+                    <label for="observacoes">OBSERVAÇÕES:</label>
+                    <textarea id="observacoes" name="observacoes"></textarea>
+                    <label for="valor-total">VALOR TOTAL:</label>
+                    <input type="text" id="valor-total" name="valor-total">
+
+                    <button class="adicionar" id="adicionar">ADICIONAR</button>
+                    <button class="cancelar" id="cancelar">CANCELAR</button>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+<script src="../../componentes/barraNavegacao.js"></script>
+</html>
