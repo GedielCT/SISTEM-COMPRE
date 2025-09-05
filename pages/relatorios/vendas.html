@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistem Compre</title>
-    <link rel="stylesheet" href="../../css/reset-min.css">
-    <link rel="stylesheet" href="../../css/padrao.css">
-    <link rel="stylesheet" href="../../css/relatorios/vendas.css">
+    <link rel="stylesheet" href="css/reset-min.css">
+    <link rel="stylesheet" href="css/padrao.css">
+    <link rel="stylesheet" href="css/relatorios/vendas.css">
 </head>
 <body>
     <barra-navegacao></barra-navegacao>
@@ -14,7 +14,7 @@
         <div class="tela">
             <header>
                 <h1>$ Relatório de Vendas</h1>
-                <a href="../../home.html" class="voltar">X</a>
+                <a href="home.html" class="voltar">X</a>
             </header>
             <section>
                 <div class="filtros">
@@ -44,7 +44,7 @@
                         <option value="mais-vendidos">Mais Vendidos</option>
                         <option value="menos-vendidos">Menos Vendidos</option>
                     </select>
-                    <img src="../../img/lupa.png" alt="Lupa">
+                    <img src="img/lupa.png" alt="Lupa">
                     <button id="consultar">Consultar</button>
                 </div>
                 <div class="relatorio">
@@ -99,28 +99,28 @@
         </div>
     </div>
 </body>
-<script src="../../componentes/barraNavegacao.js"></script>
-        <script>
-        // Corrige links dinamicamente para funcionar em GitHub Pages e Live Server
-        (function() {
-            function getBase() {
-                let base = window.location.pathname;
-                if (base.match(/\.[a-zA-Z0-9]+$/)) base = base.substring(0, base.lastIndexOf("/")) + "/";
-                const pathParts = base.split("/").filter(Boolean);
-                let root = "/";
-                if (pathParts.length > 0) root = "/" + pathParts[0] + "/";
-                if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") root = "/";
-                return root;
+    <script>
+    // Corrige links dinamicamente para funcionar em GitHub Pages e Live Server
+    (function() {
+        function getBase() {
+            let base = window.location.pathname;
+            if (base.match(/\.[a-zA-Z0-9]+$/)) base = base.substring(0, base.lastIndexOf("/")) + "/";
+            const pathParts = base.split("/").filter(Boolean);
+            let root = "/";
+            if (pathParts.length > 0) root = "/" + pathParts[0] + "/";
+            if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") root = "/";
+            return root;
+        }
+        const root = getBase();
+        document.querySelectorAll('a[href], link[href], img[src], script[src]').forEach(el => {
+            let attr = el.hasAttribute('href') ? 'href' : 'src';
+            let val = el.getAttribute(attr);
+            if (val && !val.match(/^(https?:|#|mailto:|javascript:)/) && !val.startsWith(root)) {
+                if (val.startsWith('/')) val = val.substring(1);
+                el.setAttribute(attr, root + val);
             }
-            const root = getBase();
-            document.querySelectorAll('a[href], link[href], img[src], script[src]').forEach(el => {
-                let attr = el.hasAttribute('href') ? 'href' : 'src';
-                let val = el.getAttribute(attr);
-                if (val && !val.match(/^(https?:|#|mailto:|javascript:)/) && !val.startsWith(root)) {
-                    if (val.startsWith('/')) val = val.substring(1);
-                    el.setAttribute(attr, root + val);
-                }
-            });
-        })();
-        </script>
+        });
+    })();
+    </script>
+    <script src="../../componentes/barraNavegacao.js"></script>
 </html>
