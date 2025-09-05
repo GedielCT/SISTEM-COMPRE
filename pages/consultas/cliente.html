@@ -1,20 +1,43 @@
+        <script>
+        // Corrige links dinamicamente para funcionar em GitHub Pages e Live Server
+        (function() {
+            function getBase() {
+                let base = window.location.pathname;
+                if (base.match(/\.[a-zA-Z0-9]+$/)) base = base.substring(0, base.lastIndexOf("/")) + "/";
+                const pathParts = base.split("/").filter(Boolean);
+                let root = "/";
+                if (pathParts.length > 0) root = "/" + pathParts[0] + "/";
+                if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") root = "/";
+                return root;
+            }
+            const root = getBase();
+            document.querySelectorAll('a[href], link[href], img[src], script[src]').forEach(el => {
+                let attr = el.hasAttribute('href') ? 'href' : 'src';
+                let val = el.getAttribute(attr);
+                if (val && !val.match(/^(https?:|#|mailto:|javascript:)/) && !val.startsWith(root)) {
+                    if (val.startsWith('/')) val = val.substring(1);
+                    el.setAttribute(attr, root + val);
+                }
+            });
+        })();
+        </script>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistem Compre</title>
-    <link rel="stylesheet" href="css/reset-min.css">
-    <link rel="stylesheet" href="css/padrao.css">
-    <link rel="stylesheet" href="css/relatorios/vendas.css">
+    <link rel="stylesheet" href="../../css/reset-min.css">
+    <link rel="stylesheet" href="../../css/padrao.css">
+    <link rel="stylesheet" href="../../css/relatorios/vendas.css">
 </head>
 <body>
     <barra-navegacao></barra-navegacao>
     <div class="centralizar">
         <div class="tela">
             <header>
-                <h1><img src="img/usuario.png" alt="Consulta de Clientes"> Consulta de Clientes</h1>
-                <a href="home.html" class="voltar">X</a>
+                <h1><img src="../../img/usuario.png" alt="Consulta de Clientes"> Consulta de Clientes</h1>
+                <a href="../../home.html" class="voltar">X</a>
             </header>
             <section>
                 <div class="filtros">
@@ -37,7 +60,7 @@
                         <option value="cpf">CPF</option>
                         <option value="numero-telefone">Número de Telefone</option>
                     </select>
-                    <img src="img/lupa.png" alt="Lupa">
+                    <img src="../../img/lupa.png" alt="Lupa">
                     <button id="consultar">Consultar</button>
                 </div>
                 <div class="relatorio">
@@ -71,8 +94,8 @@
                                 <td>(11) 98765-4321</td>
                                 <td>marcos@example.com</td>
                                 <td>
-                                    <button class="editar"><img src="img/editar.png" alt="Editar"></button>
-                                    <button class="excluir"><img src="img/excluir.png" alt="Excluir"></button>
+                                    <button class="editar"><img src="../../img/editar.png" alt="Editar"></button>
+                                    <button class="excluir"><img src="../../img/excluir.png" alt="Excluir"></button>
                                 </td>
                             </tr>
                             <tr>
@@ -83,8 +106,8 @@
                                 <td>(11) 98765-4322</td>
                                 <td>maria@example.com</td>
                                 <td>
-                                    <button class="editar"><img src="img/editar.png" alt="Editar"></button>
-                                    <button class="excluir"><img src="img/excluir.png" alt="Excluir"></button>
+                                    <button class="editar"><img src="../../img/editar.png" alt="Editar"></button>
+                                    <button class="excluir"><img src="../../img/excluir.png" alt="Excluir"></button>
                                 </td>
                             </tr>
                             <tr>
@@ -95,8 +118,8 @@
                                 <td>(11) 98765-4323</td>
                                 <td>cleiton@example.com</td>
                                 <td>
-                                    <button class="editar"><img src="img/editar.png" alt="Editar"></button>
-                                    <button class="excluir"><img src="img/excluir.png" alt="Excluir"></button>
+                                    <button class="editar"><img src="../../img/editar.png" alt="Editar"></button>
+                                    <button class="excluir"><img src="../../img/excluir.png" alt="Excluir"></button>
                                 </td>
                             </tr>
                         </tbody>
@@ -106,28 +129,5 @@
         </div>
     </div>
 </body>
-        <script>
-        // Corrige links dinamicamente para funcionar em GitHub Pages e Live Server
-        (function() {
-            function getBase() {
-                let base = window.location.pathname;
-                if (base.match(/\.[a-zA-Z0-9]+$/)) base = base.substring(0, base.lastIndexOf("/")) + "/";
-                const pathParts = base.split("/").filter(Boolean);
-                let root = "/";
-                if (pathParts.length > 0) root = "/" + pathParts[0] + "/";
-                if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") root = "/";
-                return root;
-            }
-            const root = getBase();
-            document.querySelectorAll('a[href], link[href], img[src], script[src]').forEach(el => {
-                let attr = el.hasAttribute('href') ? 'href' : 'src';
-                let val = el.getAttribute(attr);
-                if (val && !val.match(/^(https?:|#|mailto:|javascript:)/) && !val.startsWith(root)) {
-                    if (val.startsWith('/')) val = val.substring(1);
-                    el.setAttribute(attr, root + val);
-                }
-            });
-        })();
-        </script>
         <script src="../../componentes/barraNavegacao.js"></script>
 </html>
