@@ -1,0 +1,102 @@
+        <script>
+        // Corrige links dinamicamente para funcionar em GitHub Pages e Live Server
+        (function() {
+            function getBase() {
+                let base = window.location.pathname;
+                if (base.match(/\.[a-zA-Z0-9]+$/)) base = base.substring(0, base.lastIndexOf("/")) + "/";
+                const pathParts = base.split("/").filter(Boolean);
+                let root = "/";
+                if (pathParts.length > 0) root = "/" + pathParts[0] + "/";
+                if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") root = "/";
+                return root;
+            }
+            const root = getBase();
+            document.querySelectorAll('a[href], link[href], img[src], script[src]').forEach(el => {
+                let attr = el.hasAttribute('href') ? 'href' : 'src';
+                let val = el.getAttribute(attr);
+                if (val && !val.match(/^(https?:|#|mailto:|javascript:)/) && !val.startsWith(root)) {
+                    if (val.startsWith('/')) val = val.substring(1);
+                    el.setAttribute(attr, root + val);
+                }
+            });
+        })();
+        </script>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Compre</title>
+    <link rel="stylesheet" href="../../css/reset-min.css">
+    <link rel="stylesheet" href="../../css/padrao.css">
+    <link rel="stylesheet" href="../../css/cadastrar/tela.css">
+    <link rel="stylesheet" href="../../css/cadastrar/cliente.css">
+</head>
+<body>
+    <barra-navegacao></barra-navegacao>
+    <div class="centralizar">
+        <div class="tela">
+            <header>
+                <h1>Cadastro de Cliente</h1>
+                <a href="../../home.html" class="voltar">X</a>
+            </header>
+            <section>
+                <form class="formulario">
+                    <div class="foto" id="foto-preview"><label>Imagem</label></div>
+                    <input type="file" id="foto-input" name="foto-input" accept="image/*" style="display: none;">
+                    
+                    <input type="text" id="nome" class="nome" name="nome" placeholder="NOME COMPLETO" required>
+                    <input type="text" id="telefone1" class="telefone" name="telefone" placeholder="TELEFONE" required>
+
+                    <input type="email" id="email" class="email" name="email" placeholder="E-MAIL" required>
+                    <input type="text" id="telefone2" class="telefone" name="telefone" placeholder="TELEFONE" required>
+
+                    <input type="text" id="endereco" class="endereco" name="endereco" placeholder="ENDEREÇO" required>
+                    <input type="date" id="data-nascimento" class="data-nascimento" name="data-nascimento" placeholder="DATA DE NASCIMENTO" required>
+
+                    <input type="text" id="cidade" class="cidade" name="cidade" placeholder="CIDADE" required>
+                    <input type="text" id="estado" class="estado" name="estado" placeholder="ESTADO" required>
+                    <input type="text" id="cep" class="cep" name="cep" placeholder="CEP" required>
+                    <input type="text" id="cpf" class="cpf" name="cpf" placeholder="CPF" required>
+
+                    <label for="observacoes">OBSERVAÇÕES:</label>
+                    <textarea id="observacoes" class="observacoes" name="observacoes"></textarea>
+                </form>
+                <div class="botoes">
+                    <button id="cadastrar" class="cadastrar">CADASTRAR</button>
+                    <button id="cancelar" class="cancelar">CANCELAR</button>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+<script src="../../componentes/barraNavegacao.js"></script>
+<script>
+    const fotocliente = this.document.getElementById('foto-preview');
+    const inputfoto = this.document.getElementById('foto-input');
+
+    fotocliente.addEventListener("click", () => {
+        inputfoto.click();
+    });
+
+    inputfoto.addEventListener("change", function (){
+        const file = this.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                fotocliente.innerHTML = `<img src="${e.target.result}" style="max-width: 100%; max-height: 100%;">`;
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+
+    document.getElementById('cadastrar').onclick = function() {
+        alert('Cliente cadastrado com sucesso!');
+        window.location.href = 'cliente.html';
+    };
+
+    document.getElementById('cancelar').onclick = function() {
+        window.location.href = 'cliente.html';
+    };
+</script>
+</html>

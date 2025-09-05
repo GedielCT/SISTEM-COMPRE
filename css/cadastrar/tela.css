@@ -1,0 +1,70 @@
+.centralizar {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.tela {
+    width: 1005px;
+    height: 574px;
+    border: 3px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    overflow: visible;
+}
+
+header .voltar {
+    top: 55%;
+    right: 15px;
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    transform: translateY(-50%);
+    transition: color 0.2s, background 0.2s;
+}
+
+header .voltar:hover {
+    color: gray;
+}
+
+header {
+    height: 8%;
+    width: 100%;
+    max-width: 100%;
+    padding: auto;
+    background-color: #65698E;
+    box-sizing: border-box;
+    border-bottom: 3px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+header h1 {
+    margin: 0%;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 26px;
+    color: black;
+    flex: 1;
+}
+
+section {
+    height: 92%;
+    width: 100%;
+    margin: 0px;
+    background-color: #D9D9D9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}

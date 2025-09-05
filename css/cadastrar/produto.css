@@ -1,0 +1,49 @@
+.formulario {
+    width: 90%;
+    height: 80%;
+    padding: 100px 50px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+.botoes {
+    width: 90%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.cadastrar {
+    background-color: #60D781;
+    border: solid 1px black;
+    padding: 5px;
+    margin: 5px;
+}
+
+.cancelar {
+    background-color: #E84141;
+    border: solid 1px black;
+    padding: 5px;
+    margin: 5px;
+}
+
+.produto,
+.marca {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.valor-unitario {
+    grid-column: 2;
+}
+
+input {
+    height: 60%;
+    border: solid 1px black;
+}

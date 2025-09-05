@@ -1,0 +1,72 @@
+        <script>
+        // Corrige links dinamicamente para funcionar em GitHub Pages e Live Server
+        (function() {
+            function getBase() {
+                let base = window.location.pathname;
+                if (base.match(/\.[a-zA-Z0-9]+$/)) base = base.substring(0, base.lastIndexOf("/")) + "/";
+                const pathParts = base.split("/").filter(Boolean);
+                let root = "/";
+                if (pathParts.length > 0) root = "/" + pathParts[0] + "/";
+                if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") root = "/";
+                return root;
+            }
+            const root = getBase();
+            document.querySelectorAll('a[href], link[href], img[src], script[src]').forEach(el => {
+                let attr = el.hasAttribute('href') ? 'href' : 'src';
+                let val = el.getAttribute(attr);
+                if (val && !val.match(/^(https?:|#|mailto:|javascript:)/) && !val.startsWith(root)) {
+                    if (val.startsWith('/')) val = val.substring(1);
+                    el.setAttribute(attr, root + val);
+                }
+            });
+        })();
+        </script>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Compre</title>
+    <link rel="stylesheet" href="../../css/reset-min.css">
+    <link rel="stylesheet" href="../../css/padrao.css">
+    <link rel="stylesheet" href="../../css/cadastrar/tela.css">
+    <link rel="stylesheet" href="../../css/cadastrar/produto.css">
+</head>
+<body>
+    <barra-navegacao></barra-navegacao>
+    <div class="centralizar">
+        <div class="tela">
+            <header>
+                <h1>Cadastro de Produto</h1>
+                <a href="../../home.html" class="voltar">X</a>
+            </header>
+            <section>
+                <form class="formulario">
+                    <input type="text" id="codigo" class="codigo" name="codigo" placeholder="CÓDIGO" required>
+                    <input type="text" id="produto" class="produto" name="produto" placeholder="NOME DO PRODUTO" required>
+
+                    <input type="text" id="quantidade" class="quantidade" name="quantidade" placeholder="QUANTIDADE" required>
+                    <input type="text" id="marca" class="marca" name="marca" placeholder="MARCA DO PRODUTO" required>
+
+                    <input type="text" id="valor-unitario" class="valor-unitario" name="valor-unitario" placeholder="VALOR UNITÁRIO" required>
+                </form>
+                <div class="botoes">
+                    <button id="cadastrar" class="cadastrar">CADASTRAR</button>
+                    <button id="cancelar" class="cancelar">CANCELAR</button>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+<script src="../../componentes/barraNavegacao.js"></script>
+<script>
+    document.getElementById('cadastrar').onclick = function() {
+        alert('Produto cadastrado com sucesso!');
+        window.location.href = 'produto.html';
+    };
+
+    document.getElementById('cancelar').onclick = function() {
+        window.location.href = 'produto.html';
+    };
+</script>
+</html>
