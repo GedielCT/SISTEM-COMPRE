@@ -13,7 +13,7 @@
     <div class="centralizar">
         <div class="tela">
             <header>
-                <h1><img src="../../img/usuario.png" alt="Consulta de Produtos"> Consulta de Produtos</h1>
+                <h1>$ Consulta de Produto</h1>
                 <a href="../../home.html" class="voltar">X</a>
             </header>
             <section>
@@ -23,80 +23,84 @@
 
                     <label for="filtrar-por">Filtrar por:</label>
                     <select id="filtrar-por" name="filtrar-por">
-                        <option value="nome">Nome</option>
                         <option value="codigo">Código</option>
-                        <option value="data-nascimento">Data de Nascimento</option>
-                        <option value="cpf">CPF</option>
+                        <option value="nome">Nome</option>
+                        <option value="marca">Marca</option>
+                        <option value="categoria">Categoria</option>
+                        <option value="quantidade">Quantidade</option>
+                        <option value="valor">Valor</option>
                     </select>
-
+                
                     <label for="ordemar-por">Ordenar por:</label>
                     <select id="ordenar-por" name="ordenar-por">
-                        <option value="nome">Nome</option>
                         <option value="codigo">Código</option>
-                        <option value="data-nascimento">Data de Nascimento</option>
-                        <option value="cpf">CPF</option>
-                        <option value="numero-telefone">Número de Telefone</option>
+                        <option value="nome">Nome</option>
+                        <option value="marca">Marca</option>
+                        <option value="categoria">Categoria</option>
+                        <option value="quantidade">Quantidade</option>
+                        <option value="valor">Valor</option>
                     </select>
+
                     <img src="../../img/lupa.png" alt="Lupa">
                     <button id="consultar">Consultar</button>
                 </div>
                 <div class="relatorio">
                     <table>
                         <colgroup>
+                            <col style="width: 80px;">
                             <col style="width: 300px;">
+                            <col style="width: 160px;">
+                            <col style="width: 140px;">
                             <col style="width: 80px;">
                             <col style="width: 90px;">
-                            <col style="width: 120px;">
-                            <col style="width: 125px;">
-                            <col style="width: 100px;">
                             <col style="width: 100px;">
                         </colgroup>
                         <thead>
                             <tr>
-                                <th>Nome</th>
                                 <th>Código</th>
-                                <th>Data de Nascimento</th>
-                                <th>CPF</th>
-                                <th>Número de Telefone</th>
-                                <th>E-mail</th>
+                                <th>Nome Produto</th>
+                                <th>Marca</th>
+                                <th>Categoria</th>
+                                <th>Quantidade</th>
+                                <th>Valor</th>
                                 <th>Ações</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Marcos</td>
                                 <td>12345678</td>
-                                <td>01/01/1990</td>
-                                <td>123.456.789-00</td>
-                                <td>(11) 98765-4321</td>
-                                <td>marcos@example.com</td>
+                                <td>Produto A</td>
+                                <td>Marca A</td>
+                                <td>Categoria A</td>
+                                <td>10</td>
+                                <td>R$ 100,00</td>
                                 <td>
-                                    <button class="editar"><img src="../../img/editar.png" alt="Editar"></button>
-                                    <button class="excluir"><img src="../../img/excluir.png" alt="Excluir"></button>
+                                    <button class="editar"><img src="img/editar.png" alt="Editar"></button>
+                                    <button class="excluir"><img src="img/excluir.png" alt="Excluir"></button>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Maria</td>
-                                <td>23456789</td>
-                                <td>02/02/1992</td>
-                                <td>234.567.890-01</td>
-                                <td>(11) 98765-4322</td>
-                                <td>maria@example.com</td>
+                                <td>12345678</td>
+                                <td>Produto B</td>
+                                <td>Marca B</td>
+                                <td>Categoria B</td>
+                                <td>11</td>
+                                <td>R$ 50,00</td>
                                 <td>
-                                    <button class="editar"><img src="../../img/editar.png" alt="Editar"></button>
-                                    <button class="excluir"><img src="../../img/excluir.png" alt="Excluir"></button>
+                                    <button class="editar"><img src="img/editar.png" alt="Editar"></button>
+                                    <button class="excluir"><img src="img/excluir.png" alt="Excluir"></button>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Cleiton</td>
-                                <td>34567890</td>
-                                <td>03/03/1993</td>
-                                <td>345.678.901-02</td>
-                                <td>(11) 98765-4323</td>
-                                <td>cleiton@example.com</td>
+                                <td>12345678</td>
+                                <td>Produto C</td>
+                                <td>Marca C</td>
+                                <td>Categoria C</td>
+                                <td>3</td>
+                                <td>R$ 150,00</td>
                                 <td>
-                                    <button class="editar"><img src="../../img/editar.png" alt="Editar"></button>
-                                    <button class="excluir"><img src="../../img/excluir.png" alt="Excluir"></button>
+                                    <button class="editar"><img src="img/editar.png" alt="Editar"></button>
+                                    <button class="excluir"><img src="img/excluir.png" alt="Excluir"></button>
                                 </td>
                             </tr>
                         </tbody>
@@ -106,28 +110,28 @@
         </div>
     </div>
 </body>
-<script src="../../componentes/barraNavegacao.js"></script>
-        <script>
-        // Corrige links dinamicamente para funcionar em GitHub Pages e Live Server
-        (function() {
-            function getBase() {
-                let base = window.location.pathname;
-                if (base.match(/\.[a-zA-Z0-9]+$/)) base = base.substring(0, base.lastIndexOf("/")) + "/";
-                const pathParts = base.split("/").filter(Boolean);
-                let root = "/";
-                if (pathParts.length > 0) root = "/" + pathParts[0] + "/";
-                if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") root = "/";
-                return root;
+    <script>
+    // Corrige links dinamicamente para funcionar em GitHub Pages e Live Server
+    (function() {
+        function getBase() {
+            let base = window.location.pathname;
+            if (base.match(/\.[a-zA-Z0-9]+$/)) base = base.substring(0, base.lastIndexOf("/")) + "/";
+            const pathParts = base.split("/").filter(Boolean);
+            let root = "/";
+            if (pathParts.length > 0) root = "/" + pathParts[0] + "/";
+            if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") root = "/";
+            return root;
+        }
+        const root = getBase();
+        document.querySelectorAll('a[href], link[href], img[src], script[src]').forEach(el => {
+            let attr = el.hasAttribute('href') ? 'href' : 'src';
+            let val = el.getAttribute(attr);
+            if (val && !val.match(/^(https?:|#|mailto:|javascript:)/) && !val.startsWith(root)) {
+                if (val.startsWith('/')) val = val.substring(1);
+                el.setAttribute(attr, root + val);
             }
-            const root = getBase();
-            document.querySelectorAll('a[href], link[href], img[src], script[src]').forEach(el => {
-                let attr = el.hasAttribute('href') ? 'href' : 'src';
-                let val = el.getAttribute(attr);
-                if (val && !val.match(/^(https?:|#|mailto:|javascript:)/) && !val.startsWith(root)) {
-                    if (val.startsWith('/')) val = val.substring(1);
-                    el.setAttribute(attr, root + val);
-                }
-            });
-        })();
-        </script>
+        });
+    })();
+    </script>
+    <script src="../../componentes/barraNavegacao.js"></script>
 </html>

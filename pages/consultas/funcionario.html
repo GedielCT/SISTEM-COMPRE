@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Compre</title>
+    <link rel="stylesheet" href="../../css/reset-min.css">
+    <link rel="stylesheet" href="../../css/padrao.css">
+    <link rel="stylesheet" href="../../css/relatorios/vendas.css">
+</head>
+<body>
+    <barra-navegacao></barra-navegacao>
+    <div class="centralizar">
+        <div class="tela">
+            <header>
+                <h1>$ Consulta de Funcionário</h1>
+                <a href="../../home.html" class="voltar">X</a>
+            </header>
+            <section>
+                <div class="filtros">
+                    <label for="buscar">Buscar:</label>
+                    <input type="text" id="buscar" name="buscar">
+
+                    <label for="filtrar-por">Filtrar por:</label>
+                    <select id="filtrar-por" name="filtrar-por">
+                        <option value="codigo">Código</option>
+                        <option value="nome">Nome</option>
+                        <option value="cpf">CPF</option>
+                        <option value="data-nascimento">Data de Nascimento</option>
+                        <option value="data-admissao">Data de Admissão</option>
+                    </select>
+                
+                    <label for="ordemar-por">Ordenar por:</label>
+                    <select id="ordenar-por" name="ordenar-por">
+                        <option value="codigo">Código</option>
+                        <option value="nome">Nome</option>
+                        <option value="cpf">CPF</option>
+                        <option value="data-nascimento">Data de Nascimento</option>
+                        <option value="data-admissao">Data de Admissão</option>
+                    </select>
+
+                    <img src="../../img/lupa.png" alt="Lupa">
+                    <button id="consultar">Consultar</button>
+                </div>
+                <div class="relatorio">
+                    <table>
+                        <colgroup>
+                            <col style="width: 80px;">
+                            <col style="width: 300px;">
+                            <col style="width: 120px;">
+                            <col style="width: 80px;">
+                            <col style="width: 80px;">
+                            <col style="width: 200px;">
+                            <col style="width: 100px;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Nome</th>
+                                <th>CPF</th>
+                                <th>Data de Nascimento</th>
+                                <th>Data de Admissão</th>
+                                <th>E-mail</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>12345678</td>
+                                <td>Marcos</td>
+                                <td>123.456.789-00</td>
+                                <td>01/01/1990</td>
+                                <td>02/02/2010</td>
+                                <td>marcos@example.com</td>
+                                <td>
+                                    <button class="editar"><img src="img/editar.png" alt="Editar"></button>
+                                    <button class="excluir"><img src="img/excluir.png" alt="Excluir"></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>23456789</td>
+                                <td>Maria</td>
+                                <td>234.567.890-01</td>
+                                <td>02/02/1992</td>
+                                <td>02/02/2012</td>
+                                <td>maria@example.com</td>
+                                <td>
+                                    <button class="editar"><img src="img/editar.png" alt="Editar"></button>
+                                    <button class="excluir"><img src="img/excluir.png" alt="Excluir"></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>34567890</td>
+                                <td>Cleiton</td>
+                                <td>345.678.901-02</td>
+                                <td>03/03/1993</td>
+                                <td>03/03/2013</td>
+                                <td>cleiton@example.com</td>
+                                <td>
+                                    <button class="editar"><img src="img/editar.png" alt="Editar"></button>
+                                    <button class="excluir"><img src="img/excluir.png" alt="Excluir"></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+    <script>
+    // Corrige links dinamicamente para funcionar em GitHub Pages e Live Server
+    (function() {
+        function getBase() {
+            let base = window.location.pathname;
+            if (base.match(/\.[a-zA-Z0-9]+$/)) base = base.substring(0, base.lastIndexOf("/")) + "/";
+            const pathParts = base.split("/").filter(Boolean);
+            let root = "/";
+            if (pathParts.length > 0) root = "/" + pathParts[0] + "/";
+            if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") root = "/";
+            return root;
+        }
+        const root = getBase();
+        document.querySelectorAll('a[href], link[href], img[src], script[src]').forEach(el => {
+            let attr = el.hasAttribute('href') ? 'href' : 'src';
+            let val = el.getAttribute(attr);
+            if (val && !val.match(/^(https?:|#|mailto:|javascript:)/) && !val.startsWith(root)) {
+                if (val.startsWith('/')) val = val.substring(1);
+                el.setAttribute(attr, root + val);
+            }
+        });
+    })();
+    </script>
+    <script src="../../componentes/barraNavegacao.js"></script>
+</html>
