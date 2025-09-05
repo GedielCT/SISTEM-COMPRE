@@ -1,7 +1,7 @@
 .dropdownPerfil {
     display: none;
     height: 56px;
-    width: 92px;
+    width: 100px;
     position: absolute;
     top: 30px;
     right: 0px;
@@ -103,7 +103,7 @@
     box-sizing: border-box;
 }
 
-.botoes {
+.botoes{
     height: 100%;
     width: 100%;
     padding: 5px;
@@ -113,6 +113,7 @@
     color: black;
     text-decoration: none;
     text-align: center;
+    font-size: 14px;
     box-sizing: border-box;
 }
 

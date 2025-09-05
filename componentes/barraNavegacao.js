@@ -61,7 +61,7 @@ class BarraNavegacao extends HTMLElement {
                     <p>Conectado como: Vendedor Thiago</p>
                     <button class="buttonPerfil" id="buttonPerfil"><img src="${link('img/usuario.png')}"></button>
                     <div class="dropdownPerfil" id="dropdownPerfil">
-                        <a href="${link('pages/perfil/alterarSenha.html?from=home.html')}" class="botoes">Alterar Senha</a>
+                        <a href="${link('pages/perfil/alterarSenha.html?from=home.html')}" class="botoes" >Alterar Senha</a>
                         <a href="${link('index.html')}" class="botoes">Sair</a>
                     </div>
                 </div>
