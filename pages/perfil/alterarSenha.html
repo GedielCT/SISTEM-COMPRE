@@ -1,26 +1,26 @@
-        <script>
-        // Corrige links dinamicamente para funcionar em GitHub Pages e Live Server
-        (function() {
-            function getBase() {
-                let base = window.location.pathname;
-                if (base.match(/\.[a-zA-Z0-9]+$/)) base = base.substring(0, base.lastIndexOf("/")) + "/";
-                const pathParts = base.split("/").filter(Boolean);
-                let root = "/";
-                if (pathParts.length > 0) root = "/" + pathParts[0] + "/";
-                if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") root = "/";
-                return root;
-            }
-            const root = getBase();
-            document.querySelectorAll('a[href], link[href], img[src], script[src]').forEach(el => {
-                let attr = el.hasAttribute('href') ? 'href' : 'src';
-                let val = el.getAttribute(attr);
-                if (val && !val.match(/^(https?:|#|mailto:|javascript:)/) && !val.startsWith(root)) {
-                    if (val.startsWith('/')) val = val.substring(1);
-                    el.setAttribute(attr, root + val);
-                }
-            });
-        })();
-        </script>
+<script>
+// Corrige links dinamicamente para funcionar em GitHub Pages e Live Server
+(function() {
+    function getBase() {
+        let base = window.location.pathname;
+        if (base.match(/\.[a-zA-Z0-9]+$/)) base = base.substring(0, base.lastIndexOf("/")) + "/";
+        const pathParts = base.split("/").filter(Boolean);
+        let root = "/";
+        if (pathParts.length > 0) root = "/" + pathParts[0] + "/";
+        if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") root = "/";
+        return root;
+    }
+    const root = getBase();
+    document.querySelectorAll('a[href], link[href], img[src], script[src]').forEach(el => {
+        let attr = el.hasAttribute('href') ? 'href' : 'src';
+        let val = el.getAttribute(attr);
+        if (val && !val.match(/^(https?:|#|mailto:|javascript:)/) && !val.startsWith(root)) {
+            if (val.startsWith('/')) val = val.substring(1);
+            el.setAttribute(attr, root + val);
+        }
+    });
+})();
+</script>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -29,37 +29,40 @@
     <title>Sistem Compre</title>
     <link rel="stylesheet" href="../../css/reset-min.css">
     <link rel="stylesheet" href="../../css/padrao.css">
-    <link rel="stylesheet" href="../../css/perfil/alterarSenha.css">
+    <link rel="stylesheet" href="../../css/tela.css">
+    <link rel="stylesheet" href="../../css/perfil/perfil.css">
 </head>
 <body>
-    <div class="tela">
-        <header>
-            <h1>Alteração de senha</h1>
-        </header>
-        <section>
-            <div class="topo">
-                <img src="../../img/logo.png" alt="Logo">
-            </div>
-            <div class="baixo">
-                <div class="inputs">
-                    <input type="text" placeholder="CPF">
-                    <input type="password" placeholder="Nova Senha">
-                    <input type="password" placeholder="Confirmar Nova Senha">
+    <div class="centralizar">
+        <div class="tela">
+            <header>
+                <h1>Alteração de senha</h1>
+            </header>
+            <section>
+                <div class="topo">
+                    <img src="../../img/logo.png" alt="Logo">
                 </div>
-                <div class="info">
-                    <ul>
-                        <li>Senha deve ter pelo menos 8 caracteres</li>
-                        <li>Incluir letras maiúsculas e minúsculas</li>
-                        <li>Incluir números e símbolos</li>
-                        <li>Após inserir os seus dados, será encaminhado um SMS com o código de verificação</li>
-                    </ul>
+                <div class="baixo">
+                    <div class="inputs">
+                        <input type="text" placeholder="CPF">
+                        <input type="password" placeholder="Nova Senha">
+                        <input type="password" placeholder="Confirmar Nova Senha">
+                    </div>
+                    <div class="info">
+                        <ul>
+                            <li>Senha deve ter pelo menos 8 caracteres</li>
+                            <li>Incluir letras maiúsculas e minúsculas</li>
+                            <li>Incluir números e símbolos</li>
+                            <li>Após inserir os seus dados, será encaminhado um SMS com o código de verificação</li>
+                        </ul>
+                    </div>
+                    <div class="botoes">
+                        <a href="/pages/perfil/confirmarAlteracao.html" class="confirmar">CONFIRMAR</a>
+                        <button id="cancelar" class="cancelar">CANCELAR</button>
+                    </div>
                 </div>
-                <div class="botoes">
-                    <a href="/pages/perfil/confirmarAlteracao.html" class="confirmar">CONFIRMAR</a>
-                    <button id="cancelar" class="cancelar">CANCELAR</button>
-                </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </div>
 </body>
 <script>

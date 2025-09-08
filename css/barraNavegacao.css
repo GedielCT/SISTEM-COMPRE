@@ -1,3 +1,12 @@
+.dropdownAjuda,
+.dropdownCadastrar,
+.dropdownConsultas,
+.dropdownFinanceiro,
+.dropdownPerfil,
+.dropdownRelatorios {
+    z-index: 9999;
+}
+
 .dropdownPerfil {
     display: none;
     height: 56px;

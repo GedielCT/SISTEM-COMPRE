@@ -67,3 +67,7 @@ input {
     height: 80%;
     border: solid 1px black;
 }
+
+section {
+    flex-direction: column;
+}
