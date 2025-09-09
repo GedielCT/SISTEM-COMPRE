@@ -20,7 +20,33 @@
         }
     });
 })();
+
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('../../PHP/buscar_produtos.php')
+        .then(response => response.json())
+        .then(produtos => {
+            const tbody = document.querySelector('.relatorio tbody');
+            tbody.innerHTML = '';
+            produtos.forEach(produto => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${produto.codigo}</td>
+                    <td>${produto.nome_produto}</td>
+                    <td>${produto.marca_produto}</td>
+                    <td>${produto.categoria}</td>
+                    <td>${produto.quantidade}</td>
+                    <td>R$ ${parseFloat(produto.valor_unitario).toLocaleString('pt-BR', {minimumFractionDigits: 2})}</td>
+                    <td>
+                        <button class="editar"><img src="../../img/editar.png" alt="Editar"></button>
+                        <button class="excluir"><img src="../../img/excluir.png" alt="Excluir"></button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        });
+});
 </script>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -90,44 +116,7 @@
                                 <th>Ações</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>12345678</td>
-                                <td>Produto A</td>
-                                <td>Marca A</td>
-                                <td>Categoria A</td>
-                                <td>10</td>
-                                <td>R$ 100,00</td>
-                                <td>
-                                    <button class="editar"><img src="../../img/editar.png" alt="Editar"></button>
-                                    <button class="excluir"><img src="../../img/excluir.png" alt="Excluir"></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>12345678</td>
-                                <td>Produto B</td>
-                                <td>Marca B</td>
-                                <td>Categoria B</td>
-                                <td>11</td>
-                                <td>R$ 50,00</td>
-                                <td>
-                                    <button class="editar"><img src="../../img/editar.png" alt="Editar"></button>
-                                    <button class="excluir"><img src="../../img/excluir.png" alt="Excluir"></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>12345678</td>
-                                <td>Produto C</td>
-                                <td>Marca C</td>
-                                <td>Categoria C</td>
-                                <td>3</td>
-                                <td>R$ 150,00</td>
-                                <td>
-                                    <button class="editar"><img src="../../img/editar.png" alt="Editar"></button>
-                                    <button class="excluir"><img src="../../img/excluir.png" alt="Excluir"></button>
-                                </td>
-                            </tr>
-                        </tbody>
+                        <tbody></tbody>
                     </table>
                 </div>
             </section>
