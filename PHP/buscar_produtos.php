@@ -11,7 +11,7 @@ if ($mysqli->connect_errno) {
     exit;
 }
 
-$sql = "SELECT codigo, quantidade, valor_unitario, nome_produto, marca_produto, categoria FROM cadastro_produto";
+$sql = "SELECT codigo, quantidade, valor_unitario, nome_produto, marca_produto, categoria FROM produto";
 $result = $mysqli->query($sql);
 
 $produtos = [];
