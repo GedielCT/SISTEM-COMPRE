@@ -22,7 +22,7 @@
 })();
 
 document.addEventListener('DOMContentLoaded', function() {
-    fetch('../../PHP/buscar_produtos.php')
+    fetch('../../php/buscar_produtos.php')
         .then(response => response.json())
         .then(produtos => {
             const tbody = document.querySelector('.relatorio tbody');
