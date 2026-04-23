@@ -41,36 +41,37 @@
                 <a href="../../home.html" class="voltar">X</a>
             </header>
             <section>
-                <form class="formulario">
+                <form name="formulario" class="formulario">
                     <div class="foto" id="foto-preview"><label>Imagem</label></div>
                     <input type="file" id="foto-input" name="foto-input" accept="image/*" style="display: none;">
                     
-                    <input type="text" id="nome" class="nome" name="nome" placeholder="NOME COMPLETO" required>
-                    <input type="text" id="telefone1" class="telefone" name="telefone" placeholder="TELEFONE" required>
+                    <input type="text" id="nome" class="nome" name="campoNome" placeholder="NOME COMPLETO" required>
+                    <input type="text" id="telefone1" class="telefone" name="campoTelefone1" placeholder="TELEFONE" required>
 
-                    <input type="email" id="email" class="email" name="email" placeholder="E-MAIL" required>
-                    <input type="text" id="telefone2" class="telefone" name="telefone" placeholder="TELEFONE" required>
+                    <input type="email" id="email" class="email" name="campoEmail" placeholder="E-MAIL" required>
+                    <input type="text" id="telefone2" class="telefone" name="campoTelefone2" placeholder="TELEFONE" required>
+                    <input type="text" id="endereco" class="endereco" name="campoEndereco" placeholder="ENDEREÇO" required>
+                    <input type="date" id="data-nascimento" class="data-nascimento" name="campoDataNascimento" placeholder="DATA DE NASCIMENTO" required>
 
-                    <input type="text" id="endereco" class="endereco" name="endereco" placeholder="ENDEREÇO" required>
-                    <input type="date" id="data-nascimento" class="data-nascimento" name="data-nascimento" placeholder="DATA DE NASCIMENTO" required>
-
-                    <input type="text" id="cidade" class="cidade" name="cidade" placeholder="CIDADE" required>
-                    <input type="text" id="estado" class="estado" name="estado" placeholder="ESTADO" required>
-                    <input type="text" id="cep" class="cep" name="cep" placeholder="CEP" required>
-                    <input type="text" id="cpf" class="cpf" name="cpf" placeholder="CPF" required>
+                    <input type="text" id="cidade" class="cidade" name="campoCidade" placeholder="CIDADE" required>
+                    <input type="text" id="estado" class="estado" name="campoEstado" placeholder="ESTADO" required>
+                    <input type="text" id="cep" class="cep" name="campoCep" placeholder="CEP" required>
+                    <input type="text" id="cpf" class="cpf" name="campoCpf" placeholder="CPF" required>
 
                     <label for="observacoes">OBSERVAÇÕES:</label>
-                    <textarea id="observacoes" class="observacoes" name="observacoes"></textarea>
+                    <textarea id="observacoes" class="observacoes" name="campoObservacoes"></textarea>
+                
+                    <div class="botoes">
+                        <button id="cadastrar" class="cadastrar">CADASTRAR</button>
+                        <button id="cancelar" class="cancelar">CANCELAR</button>
+                    </div>
                 </form>
-                <div class="botoes">
-                    <button id="cadastrar" class="cadastrar">CADASTRAR</button>
-                    <button id="cancelar" class="cancelar">CANCELAR</button>
-                </div>
             </section>
         </div>
     </div>
 </body>
 <script src="../../componentes/barraNavegacao.js"></script>
+<script type="module" src="../../backend/funcionario/crud.js"></script>
 <script>
     const fotocliente = this.document.getElementById('foto-preview');
     const inputfoto = this.document.getElementById('foto-input');
@@ -90,10 +91,10 @@
         }
     });
 
-    document.getElementById('cadastrar').onclick = function() {
-        alert('Funcionário cadastrado com sucesso!');
-        window.location.href = 'funcionario.html';
-    };
+//    document.getElementById('cadastrar').onclick = function() {
+//        alert('Funcionário cadastrado com sucesso!');
+//        window.location.href = 'funcionario.html';
+//    };
 
     document.getElementById('cancelar').onclick = function() {
         window.location.href = 'funcionario.html';

@@ -58,7 +58,7 @@ class BarraNavegacao extends HTMLElement {
                     </div>
                 </div>
                 <div class="direita">
-                    <p>Conectado como: Vendedor Thiago</p>
+                    <p>Conectado como: <span id="usuarioConectado">Convidado</span></p>
                     <button class="buttonPerfil" id="buttonPerfil"><img src="${link('img/usuario.png')}"></button>
                     <div class="dropdownPerfil" id="dropdownPerfil">
                         <a href="${link('pages/perfil/alterarSenha.html?from=home.html')}" class="botoes" >Alterar Senha</a>
@@ -85,6 +85,27 @@ class BarraNavegacao extends HTMLElement {
 
         const buttonCadastrar = this.shadowRoot.querySelector("#buttonCadastrar");
         const dropdownCadastrar = this.shadowRoot.querySelector("#dropdownCadastrar");
+
+        // Exibir usuário logado (lê do localStorage: sistemaCompre_usuarioAtual)
+        try {
+            const usuarioSpan = this.shadowRoot.querySelector('#usuarioConectado');
+            const raw = localStorage.getItem('sistemaCompre_usuarioAtual');
+            if (usuarioSpan) {
+                if (raw) {
+                    try {
+                        const u = JSON.parse(raw);
+                        usuarioSpan.textContent = u && u.nomeUsuario ? u.nomeUsuario : 'Convidado';
+                    } catch (err) {
+                        usuarioSpan.textContent = 'Convidado';
+                    }
+                } else {
+                    usuarioSpan.textContent = 'Convidado';
+                }
+            }
+        } catch (err) {
+            // não bloquear a inicialização do componente
+            console.warn('Erro ao ler usuário atual para a barra de navegação', err);
+        }
 
         if (dropdownPerfil) {
             buttonPerfil.addEventListener("click", () => {

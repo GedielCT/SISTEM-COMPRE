@@ -20,31 +20,6 @@
         }
     });
 })();
-
-document.addEventListener('DOMContentLoaded', function() {
-    fetch('../../PHP/buscar_produtos.php')
-        .then(response => response.json())
-        .then(produtos => {
-            const tbody = document.querySelector('.relatorio tbody');
-            tbody.innerHTML = '';
-            produtos.forEach(produto => {
-                const tr = document.createElement('tr');
-                tr.innerHTML = `
-                    <td>${produto.codigo}</td>
-                    <td>${produto.nome_produto}</td>
-                    <td>${produto.marca_produto}</td>
-                    <td>${produto.categoria}</td>
-                    <td>${produto.quantidade}</td>
-                    <td>R$ ${parseFloat(produto.valor_unitario).toLocaleString('pt-BR', {minimumFractionDigits: 2})}</td>
-                    <td>
-                        <button class="editar"><img src="../../img/editar.png" alt="Editar"></button>
-                        <button class="excluir"><img src="../../img/excluir.png" alt="Excluir"></button>
-                    </td>
-                `;
-                tbody.appendChild(tr);
-            });
-        });
-});
 </script>
 
 <!DOCTYPE html>
@@ -95,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <button id="consultar">Consultar</button>
                 </div>
                 <div class="relatorio">
-                    <table>
+                    <table class="listaProdutos">
                         <colgroup>
                             <col style="width: 80px;">
                             <col style="width: 300px;">
@@ -124,4 +99,5 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 </body>
 <script src="../../componentes/barraNavegacao.js"></script>
+<script type="module" src="../../backend/produto/read.js"></script>
 </html>

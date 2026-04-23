@@ -41,29 +41,31 @@
                 <a href="../../home.html" class="voltar">X</a>
             </header>
             <section>
-                <form class="formulario">
-                    <input type="text" id="codigo" class="codigo" name="codigo" placeholder="CÓDIGO" required>
-                    <input type="text" id="produto" class="produto" name="produto" placeholder="NOME DO PRODUTO" required>
+                <form name="formulario" class="formulario">
+                    <input type="text" id="codigo" class="codigo" name="campoCodigo" placeholder="CÓDIGO" required>
+                    <input type="text" id="produto" class="produto" name="campoNomeProduto" placeholder="NOME DO PRODUTO" required>
 
-                    <input type="text" id="quantidade" class="quantidade" name="quantidade" placeholder="QUANTIDADE" required>
-                    <input type="text" id="marca" class="marca" name="marca" placeholder="MARCA DO PRODUTO" required>
+                    <input type="text" id="quantidade" class="quantidade" name="campoQuantidade" placeholder="QUANTIDADE" required>
+                    <input type="text" id="marca" class="marca" name="campoMarcaProduto" placeholder="MARCA DO PRODUTO" required>
 
-                    <input type="text" id="valor-unitario" class="valor-unitario" name="valor-unitario" placeholder="VALOR UNITÁRIO" required>
+                    <input type="text" id="valor-unitario" class="valor-unitario" name="campoValorUnitario" placeholder="VALOR UNITÁRIO" required>
+                    
+                    <div class="botoes">
+                        <button id="cadastrar" class="cadastrar">CADASTRAR</button>
+                        <button id="cancelar" class="cancelar">CANCELAR</button>
+                    </div>                
                 </form>
-                <div class="botoes">
-                    <button id="cadastrar" class="cadastrar">CADASTRAR</button>
-                    <button id="cancelar" class="cancelar">CANCELAR</button>
-                </div>
             </section>
         </div>
     </div>
 </body>
 <script src="../../componentes/barraNavegacao.js"></script>
+<script type="module" src="../../backend/produto/crud.js"></script>
 <script>
-    document.getElementById('cadastrar').onclick = function() {
-        alert('Produto cadastrado com sucesso!');
-        window.location.href = 'produto.html';
-    };
+//    document.getElementById('cadastrar').onclick = function() {
+//        alert('Produto cadastrado com sucesso!');
+//        window.location.href = 'produto.html';
+//    };
 
     document.getElementById('cancelar').onclick = function() {
         window.location.href = 'produto.html';
